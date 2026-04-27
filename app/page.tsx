@@ -7,7 +7,7 @@ export default function Home() {
           style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}
         >
           <a href="#" className="logo">
-            JESS.VC
+            Subh.06
           </a>
           <div className="nav-links">
             <a href="#work">Projects</a>
@@ -19,14 +19,13 @@ export default function Home() {
 
       <section className="hero">
         <div className="hero-text">
-          <p className="hero-tagline">VIBE CODER // BERLIN // EST 1994</p>
-          <h1>CREATIVE REBEL.</h1>
+          <p className="hero-tagline">UI UX // DSA PRACTITIONER // DATA SCIENCE</p>
+          <h1>DESIGN ANALYZE BUILD.</h1>
           <p style={{ fontSize: "1.2rem", maxWidth: "500px", marginBottom: "30px" }}>
-            Building code that feels as good as it looks. Brutalist aesthetics meet clean architecture. Where technical
-            excellence vibes with raw creative energy.
+            I create intuitive user experiences, solve problems using data structures and algorithms, and explore data to uncover meaningful insights. Focused on building efficient, scalable, and user-centered solutions.
           </p>
           <a href="#work" className="brutal-btn">
-            VIEW MY KILLER WORK
+            VIEW MY WORK
           </a>
         </div>
         <div className="hero-image">
@@ -37,9 +36,8 @@ export default function Home() {
 
       <div className="marquee">
         <div className="marquee-content">
-          VIBE CODER // NEXTJS WIZARD // REACT MASTER // TYPESCRIPT // TAILWIND // BRUTALIST UI // CLEAN CODE //
-          AESTHETIC APPS // VIBE CODER // NEXTJS WIZARD // REACT MASTER // TYPESCRIPT // TAILWIND // BRUTALIST UI //
-          CLEAN CODE // AESTHETIC APPS //
+          UI/UX DESIGNER // ALGORITHM THINKER // DATA-DRIVEN DEVELOPMENT // PROBLEM SOLVER // FRONTEND ENGINEERING // DATA SCIENCE ENTHUSIAST // SYSTEM DESIGN BASICS //
+          UI/UX DESIGNER // ALGORITHM THINKER // DATA-DRIVEN DEVELOPMENT // PROBLEM SOLVER // FRONTEND ENGINEERING // DATA SCIENCE ENTHUSIAST // SYSTEM DESIGN BASICS //
         </div>
       </div>
 
