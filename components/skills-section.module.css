@@ -1,0 +1,305 @@
+/* ═══════════════════════════════════════════════════════════════
+   SKILLS & EXPERTISE SECTION — CSS Module
+   ═══════════════════════════════════════════════════════════════ */
+
+.section {
+  background: #D3D3D3;
+  padding: 80px 0;
+  border-bottom: 4px solid #000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ── HEADING ─────────────────────────────────────────────────── */
+
+.heading {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.headingStatic {
+  color: #555;
+  margin-right: 4px;
+}
+
+.headingDynamic {
+  color: #000;
+  position: relative;
+  min-width: 180px;
+}
+
+.cursor {
+  font-weight: 900;
+  color: #ff3e00;
+  transition: opacity 0.1s;
+  margin-left: 2px;
+}
+
+/* ── GRID — 6-column trick for 3-top, 2-centered-bottom ────── */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 36px;
+  justify-items: center;
+  align-items: start; /* prevents cards stretching to equal height — fixes WEB 4.0 blank space */
+  transition: gap 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* When any card is hovered, increase gap so siblings slide out */
+.grid:has(.card:hover) {
+  gap: 44px;
+}
+
+.card:nth-child(1),
+.card:nth-child(2),
+.card:nth-child(3) {
+  grid-column: span 2;
+}
+
+.card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.card:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+/* ── CARD ────────────────────────────────────────────────────── */
+
+.card {
+  background: #ffffff;
+  border: 2px solid #000;
+  box-shadow: 6px 6px 0px #000;
+  padding: 36px 30px;
+  width: 100%;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 2px;
+  opacity: 0;
+  transform: translateY(24px) scale(1);
+  cursor: pointer;
+  position: relative;
+}
+
+.cardVisible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover {
+  transform: scale(1.12);
+  box-shadow: 12px 12px 0px #ff3e00;
+  z-index: 10;
+}
+
+/* ── CARD TITLE ──────────────────────────────────────────────── */
+
+.cardTitle {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #e0e0e0;
+  color: #000;
+}
+
+/* ── SKILL ROW ───────────────────────────────────────────────── */
+
+.skillList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.skillRow {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.skillInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skillIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: #000;
+}
+
+.skillIconImage {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.skillName {
+  font-family: "Space Mono", monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #000;
+  flex: 1;
+}
+
+.skillPercent {
+  font-family: "Space Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #666;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* ── PROGRESS BAR ────────────────────────────────────────────── */
+
+.barTrack {
+  width: 100%;
+  height: 10px;
+  background: #e8e8e8;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: linear-gradient(90deg, #cc0000 0%, #ff3e00 100%);
+  border-radius: 0;
+  width: 0%;
+  transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+
+/* Shimmer sweep animation on filled bar */
+.barFill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 40%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.4) 60%,
+    transparent 100%
+  );
+  animation: shimmer 2s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+/* ── CATEGORY LABEL ──────────────────────────────────────────── */
+
+.categoryLabel {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #555;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 2px solid #e0e0e0;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .grid:has(.card:hover) {
+    gap: 34px;
+  }
+
+  .card:nth-child(1),
+  .card:nth-child(2),
+  .card:nth-child(3),
+  .card:nth-child(4),
+  .card:nth-child(5) {
+    grid-column: span 1;
+  }
+
+  .card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 48%;
+    justify-self: center;
+  }
+
+  .heading {
+    font-size: 3.5rem;
+  }
+
+  .container {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .card:last-child:nth-child(odd) {
+    max-width: 100%;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .card {
+    padding: 28px 22px;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+}

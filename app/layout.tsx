@@ -88,7 +88,7 @@ export default function RootLayout({
       </head>
       <body className={`font-sans antialiased`}>
         <TargetCursor
-          targetSelector="a, button, input, textarea, select, summary, .project-card, .service-box, .hero-image img, .tag, [data-cursor-target]"
+          targetSelector="a, button, input, textarea, select, summary, .project-card, .service-box, .skill-card, .hero-image img, .tag, [data-cursor-target]"
           spinDuration={1.35}
           hoverDuration={0.18}
           hideDefaultCursor={true}

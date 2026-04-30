@@ -1,3 +1,5 @@
+import SkillsSection from "@/components/skills-section"
+
 export default function Home() {
   return (
     <>
@@ -10,6 +12,7 @@ export default function Home() {
             Subh.06
           </a>
           <div className="nav-links">
+            <a href="#skills">Skills</a>
             <a href="#work">Projects</a>
             <a href="#services">Services</a>
             <a href="#contact">Hire Me</a>
@@ -40,6 +43,8 @@ export default function Home() {
           UI/UX DESIGNER // ALGORITHM THINKER // DATA-DRIVEN DEVELOPMENT // PROBLEM SOLVER // FRONTEND ENGINEERING // DATA SCIENCE ENTHUSIAST // SYSTEM DESIGN BASICS //
         </div>
       </div>
+
+      <SkillsSection />
 
       <h2 className="section-title" id="work">
         Selected Damage
