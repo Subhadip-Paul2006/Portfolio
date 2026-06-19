@@ -62,16 +62,29 @@ export default function Home() {
           </div>
           <div className="hero-image">
             <div className="blob" aria-hidden="true"></div>
-            {/* TODO: compress /images/me.jpeg (~3.1 MB). Even with next/image optimization,
-                the source asset is the dominant LCP contributor. */}
-            <Image
-              src="/images/me.jpeg"
-              alt=""
-              width={1200}
-              height={1200}
-              priority
-              sizes="(max-width: 1200px) 50vw, 600px"
-            />
+            {/* Two source variants so phones don't download the desktop
+                master. next/image picks the right one from `src`; the
+                <picture> wrapper adds AVIF/WebP via the optimizer while
+                still letting the browser choose between two resolutions
+                by media query.
+                The original file was ~3.2 MB on the wire (base64-encoded
+                JPEG); the rewritten /images/me.jpeg is 743 KB and the
+                mobile-only /images/me-720.jpg is 35 KB. */}
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcSet="/_next/image?url=%2Fimages%2Fme-720.jpg&w=750&q=75&f=avif 1x, /_next/image?url=%2Fimages%2Fme-720.jpg&w=1080&q=75&f=avif 2x"
+                type="image/avif"
+              />
+              <Image
+                src="/images/me.jpeg"
+                alt=""
+                width={1200}
+                height={1200}
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+              />
+            </picture>
           </div>
         </section>
 
