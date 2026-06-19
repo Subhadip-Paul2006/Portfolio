@@ -9,10 +9,7 @@ export default function Home() {
   return (
     <>
       <nav>
-        <div
-          className="container"
-          style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}
-        >
+        <div className="container nav-inner">
           <a href="#" className="logo" aria-label="Subh.06 home">
             Subh.06
           </a>
@@ -20,6 +17,8 @@ export default function Home() {
               via the sibling selector in app/globals.css. No JS required. */}
           <input type="checkbox" id="nav-toggle" className="nav-toggle" aria-label="Toggle navigation" />
           <label htmlFor="nav-toggle" className="nav-burger" aria-label="Open navigation menu">
+            <span />
+            <span />
             <span />
           </label>
           <div className="nav-links">
@@ -38,9 +37,20 @@ export default function Home() {
           <p style={{ fontSize: "1.2rem", maxWidth: "500px", marginBottom: "30px" }}>
             I create intuitive user experiences, solve problems using data structures and algorithms, and explore data to uncover meaningful insights. Focused on building efficient, scalable, and user-centered solutions.
           </p>
-          <a href="#work" className="brutal-btn">
-            VIEW MY WORK
-          </a>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: "15px" }}>
+            <a href="#work" className="brutal-btn">
+              MY WORK
+            </a>
+            <a
+              href="https://github.com/Subhadip-Paul2006/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", border: "var(--border-width) solid var(--black)", boxShadow: "4px 4px 0 var(--black)", background: "var(--bg)", padding: "8px" }}
+            >
+              <Image src={GitHubIcon} alt="GitHub" width={32} height={32} />
+            </a>
+          </div>
         </div>
         <div className="hero-image">
           <div className="blob" aria-hidden="true"></div>
