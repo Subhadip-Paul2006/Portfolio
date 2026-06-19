@@ -156,7 +156,6 @@ body {
   line-height: 1.4;
   overflow-x: hidden;
   border: var(--border-width) solid var(--black);
-  cursor: crosshair;
 }
 
 a,
@@ -328,7 +327,7 @@ nav {
   display: inline-block;
   font-family: "Archivo Black", sans-serif;
   font-size: 2rem;
-  animation: 20s linear 0s infinite normal none running marquee;
+  animation: 40s linear 0s infinite normal none running marquee;
 }
 
 @keyframes marquee {
@@ -527,11 +526,68 @@ button:active {
   box-shadow: 4px 4px 0px var(--primary);
 }
 
+/* Visually hidden until focused — keyboard users get a skip-to-content
+   link without cluttering the visual layout. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 9999;
+  padding: 12px 20px;
+  background: var(--black);
+  color: white;
+  font-family: "Archivo Black", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: var(--border-width) solid var(--black);
+  box-shadow: 4px 4px 0 var(--primary);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  left: 12px;
+  top: 12px;
+  outline: none;
+}
+
 footer {
   padding: 40px;
   text-align: center;
   background: var(--bg);
   font-weight: 700;
+}
+
+.footer-tag {
+  margin-top: 20px;
+  font-size: 0.8rem;
+}
+
+/* Disabled "EXPLORE →" pseudo-link styled as a button (no background
+   or shadow) so it inherits the project-card typography on hover. */
+.project-link {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-top: 10px;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: inherit;
+  box-shadow: none;
+  cursor: not-allowed;
+  letter-spacing: 0.5px;
+}
+
+.project-link:disabled {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  opacity: 1;
+  transform: none;
+}
+
+.project-card:hover .project-link:disabled {
+  color: white;
 }
 
 .brutal-btn {
@@ -545,7 +601,9 @@ footer {
   box-shadow: 6px 6px 0px var(--secondary);
   margin-top: 20px;
   width: 320px;
+  max-width: 100%;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .brutal-btn:hover {

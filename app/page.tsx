@@ -7,12 +7,17 @@ import LinkedInIcon from "@/components/icons/linkedin.svg"
 import GitHubIcon from "@/components/icons/github-142-svgrepo-com.svg"
 import DiscordIcon from "@/components/icons/discord-svgrepo-com.svg"
 
+// Computed once at build time — avoids per-render Date allocation and
+// removes the need for suppressHydrationWarning on the footer.
+const YEAR = new Date().getFullYear()
+
 export default function Home() {
   return (
     <>
+      <a href="#main" className="skip-link">Skip to content</a>
       <nav>
         <div className="container nav-inner">
-          <a href="#" className="logo" aria-label="Subh.06 home">
+          <a href="#" className="logo">
             Subh.06
           </a>
           {/* CSS-only hamburger: the checkbox drives .nav-links visibility
@@ -32,7 +37,8 @@ export default function Home() {
         </div>
       </nav>
 
-      <section className="hero">
+      <main id="main">
+        <section className="hero">
         <div className="hero-text">
           <p className="hero-tagline">UI UX // DSA PRACTITIONER // DATA SCIENCE</p>
           <h1>DESIGN ANALYZE BUILD.</h1>
@@ -60,7 +66,7 @@ export default function Home() {
               the source asset is the dominant LCP contributor. */}
           <Image
             src="/images/me.jpeg"
-            alt="Portrait of Subh.06"
+            alt=""
             width={1200}
             height={1200}
             priority
@@ -104,9 +110,9 @@ export default function Home() {
           <p style={{ margin: "15px 0" }}>
             A brutalist approach to modern fashion retail. Conversion rates up by 40% because of the sheer audacity.
           </p>
-          <a href="#" style={{ color: "inherit", fontWeight: 700 }} aria-disabled="true">
+          <button type="button" className="project-link" disabled aria-disabled="true">
             EXPLORE →
-          </a>
+          </button>
         </article>
         <article className="project-card">
           <Image
@@ -126,9 +132,9 @@ export default function Home() {
           <p style={{ margin: "15px 0" }}>
             Visual identity for a underground music collective. Thick lines, high contrast, maximum impact.
           </p>
-          <a href="#" style={{ color: "inherit", fontWeight: 700 }} aria-disabled="true">
+          <button type="button" className="project-link" disabled aria-disabled="true">
             EXPLORE →
-          </a>
+          </button>
         </article>
         <article className="project-card">
           <Image
@@ -148,9 +154,9 @@ export default function Home() {
           <p style={{ margin: "15px 0" }}>
             A data visualization tool that rejects the minimalism of SaaS. Information density meets raw aesthetic.
           </p>
-          <a href="#" style={{ color: "inherit", fontWeight: 700 }} aria-disabled="true">
+          <button type="button" className="project-link" disabled aria-disabled="true">
             EXPLORE →
-          </a>
+          </button>
         </article>
         <article className="project-card">
           <Image
@@ -170,9 +176,9 @@ export default function Home() {
           <p style={{ margin: "15px 0" }}>
             Experimental WebGL site for a tech startup. Optimized for performance, designed for disruption.
           </p>
-          <a href="#" style={{ color: "inherit", fontWeight: 700 }} aria-disabled="true">
+          <button type="button" className="project-link" disabled aria-disabled="true">
             EXPLORE →
-          </a>
+          </button>
         </article>
       </section>
 
@@ -246,10 +252,10 @@ export default function Home() {
       </section>
 
       <footer>
-        <p suppressHydrationWarning>
-          © {new Date().getFullYear()} JESS.VC NO RIGHTS RESERVED. COPY EVERYTHING.
+        <p>
+          © {YEAR} JESS.VC NO RIGHTS RESERVED. COPY EVERYTHING.
         </p>
-        <div style={{ marginTop: "20px", fontSize: "0.8rem" }}>
+        <div className="footer-tag">
           BUILT WITH VIBES, CODE, AND BRUTALIST AESTHETICS.
         </div>
       </footer>

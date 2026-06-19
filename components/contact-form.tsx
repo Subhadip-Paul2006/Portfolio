@@ -72,7 +72,11 @@ export default function ContactForm() {
           required
         />
       </div>
-      <button type="submit" disabled={status === "submitting"}>
+      <button
+        type="submit"
+        disabled={status === "submitting"}
+        aria-busy={status === "submitting"}
+      >
         {status === "submitting" ? "SENDING…" : "SEND TRANSMISSION"}
       </button>
 

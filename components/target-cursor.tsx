@@ -94,6 +94,7 @@ export default function TargetCursor({
     let activeTarget: HTMLElement | null = null
     let currentLeaveHandler: (() => void) | null = null
     let resumeTimeout: number | null = null
+    let scrollScheduled = false
 
     const cleanupTarget = (target: HTMLElement | null) => {
       if (target && currentLeaveHandler) {
@@ -140,20 +141,25 @@ export default function TargetCursor({
     }
 
     const scrollHandler = () => {
-      if (!activeTarget) {
+      if (!activeTarget || scrollScheduled) {
         return
       }
 
-      const mouseX = getNumericProperty(cursor, "x")
-      const mouseY = getNumericProperty(cursor, "y")
-      const elementUnderPointer = document.elementFromPoint(mouseX, mouseY)
-      const stillOverTarget =
-        elementUnderPointer instanceof Element &&
-        (elementUnderPointer === activeTarget || elementUnderPointer.closest(targetSelector) === activeTarget)
+      scrollScheduled = true
+      window.requestAnimationFrame(() => {
+        scrollScheduled = false
 
-      if (!stillOverTarget) {
-        currentLeaveHandler?.()
-      }
+        const mouseX = getNumericProperty(cursor, "x")
+        const mouseY = getNumericProperty(cursor, "y")
+        const elementUnderPointer = document.elementFromPoint(mouseX, mouseY)
+        const stillOverTarget =
+          elementUnderPointer instanceof Element &&
+          (elementUnderPointer === activeTarget || elementUnderPointer.closest(targetSelector) === activeTarget)
+
+        if (!stillOverTarget) {
+          currentLeaveHandler?.()
+        }
+      })
     }
 
     const pointerDownHandler = () => {
@@ -277,6 +283,10 @@ export default function TargetCursor({
     window.addEventListener("scroll", scrollHandler, { passive: true })
     window.addEventListener("pointerdown", pointerDownHandler, { passive: true })
     window.addEventListener("pointerup", pointerUpHandler, { passive: true })
+
+    // `pointermove` already gives us cursor position for hovers, but the
+    // `pointerover` handler still needs a fresh mouse position on touch
+    // emulation. So we still listen for both.
 
     return () => {
       if (tickerRef.current) {
