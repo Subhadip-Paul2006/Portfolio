@@ -88,7 +88,38 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#ffffff",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+}
+
+// JSON-LD Person schema. Inlined into <head> so search engines can pick
+// it up without a separate request — Lighthouse SEO recommends structured
+// data on a single-page portfolio like this.
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Subhadip Paul",
+  alternateName: "Subh.06",
+  url: "https://jess.vc",
+  image: "https://jess.vc/images/me.jpeg",
+  jobTitle: "Vibe Coder & Creative Developer",
+  description:
+    "Crafting aesthetic code and brutalist digital experiences. Where technical excellence meets raw creative energy.",
+  sameAs: [
+    "https://github.com/Subhadip-Paul2006",
+    "https://www.linkedin.com/in/subhadip-paul-471186339/",
+  ],
+  knowsAbout: [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Brutalist Design",
+    "Frontend Development",
+    "Data Structures and Algorithms",
+    "Data Science",
+  ],
 }
 
 export default function RootLayout({
@@ -98,6 +129,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${archivoBlack.variable} ${spaceMono.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
       <body className="font-sans antialiased">
         <TargetCursor
           targetSelector="a, button, input, textarea, select, summary, .project-card, .service-box, .skill-card, .hero-image img, .tag, [data-cursor-target]"
