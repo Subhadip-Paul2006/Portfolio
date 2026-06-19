@@ -73,8 +73,6 @@ interface SkillCategory {
   skills: Skill[]
 }
 
-const ROTATING_WORDS = ["DESIGN", "ALGORITHMS", "DATA", "SYSTEMS", "CODE"]
-
 const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: "WEB 1.0",
@@ -132,13 +130,10 @@ const SKILL_CATEGORIES: SkillCategory[] = [
   },
 ]
 
-/* ──────────────────────── ROTATING HEADER ──────────────────── */
-
-function RotatingHeading() {
-  // intentionally empty — see ./rotating-heading.tsx
-}
-
-function _RotatingHeadingImpl_REMOVED() {
+/* ─────────────────── ROTATING HEADER ─────────────────────────
+   See ./rotating-heading.tsx — extracted to its own memoized component
+   so the per-keystroke state updates don't re-render the 25 skill-card
+   nodes below. */
 
 /* ──────────────────────── PROGRESS BAR ─────────────────────── */
 
@@ -187,9 +182,9 @@ function SkillCard({
                   {isLucide ? (
                     <Icon size={18} color="#000" strokeWidth={2.5} />
                   ) : (
-                    <Image 
-                      src={Icon} 
-                      alt={skill.name} 
+                    <Image
+                      src={Icon}
+                      alt={skill.name}
                       className={styles.skillIconImage}
                       width={18}
                       height={18}

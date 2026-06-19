@@ -155,7 +155,11 @@ body {
   color: var(--black);
   line-height: 1.4;
   overflow-x: hidden;
-  border: var(--border-width) solid var(--black);
+  /* Inset box-shadow gives the same brutalist 4px frame as `border` but is
+     a compositor-only operation — avoids the full-repaint triggered when
+     `body { border }` is invalidated by viewport changes (mobile address
+     bar collapse/expand). */
+  box-shadow: inset 0 0 0 var(--border-width) var(--black);
 }
 
 a,
@@ -321,6 +325,11 @@ nav {
   overflow: hidden;
   white-space: nowrap;
   border-bottom: var(--border-width) solid var(--black);
+  /* content-visibility:auto skips layout/paint for the marquee when it
+     scrolls off-screen, pausing the infinite translate animation. The
+     explicit contain-intrinsic-size keeps the page from jumping. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 90px;
 }
 
 .marquee-content {
