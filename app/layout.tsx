@@ -10,6 +10,8 @@ const archivoBlack = Archivo_Black({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-archivo-black",
+  preload: true,
+  fallback: ["system-ui", "sans-serif"],
 })
 
 const spaceMono = Space_Mono({
@@ -17,6 +19,8 @@ const spaceMono = Space_Mono({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-space-mono",
+  preload: true,
+  fallback: ["ui-monospace", "monospace"],
 })
 
 export const metadata: Metadata = {
@@ -103,6 +107,14 @@ export default function RootLayout({
           parallaxOn={true}
         />
         {children}
+        {/* Lazy-load analytics so the initial HTML/JS payload stays small.
+            `next/script` strategy=afterInteractive defers Vercel's beacon
+            until the page is interactive. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };`,
+          }}
+        />
         <Analytics />
       </body>
     </html>

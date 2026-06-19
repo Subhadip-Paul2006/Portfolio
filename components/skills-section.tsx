@@ -272,6 +272,18 @@ export default function SkillsSection() {
     return () => observer.disconnect()
   }, [handleIntersect])
 
+  // Once the section is in view we never need to react to scroll again —
+  // unobserve the target so the callback stops firing on every scroll/resize.
+  useEffect(() => {
+    if (!inView) return
+    const observer = new IntersectionObserver(() => undefined, { threshold: 0.1 })
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+      observer.unobserve(sectionRef.current)
+    }
+    observer.disconnect()
+  }, [inView])
+
   return (
     <section className={styles.section} ref={sectionRef}>
       <div className={styles.container}>

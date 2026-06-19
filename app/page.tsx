@@ -1,6 +1,8 @@
 import Image from "next/image"
 import SkillsSection from "@/components/skills-section"
 import ContactForm from "@/components/contact-form"
+// Static SVG icons are imported as paths so Next can fingerprint them as
+// cacheable static assets instead of bundling them through the client graph.
 import LinkedInIcon from "@/components/icons/linkedin.svg"
 import GitHubIcon from "@/components/icons/github-142-svgrepo-com.svg"
 import DiscordIcon from "@/components/icons/discord-svgrepo-com.svg"

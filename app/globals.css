@@ -845,4 +845,26 @@ footer {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  /* Pause infinite animations and shorten transitions so motion-sensitive
+     users (and the JS thread) don't pay for what they can't perceive. */
+  .marquee-content {
+    animation: none;
+  }
+
+  .hero-tagline,
+  .hero-image img,
+  .project-card,
+  button,
+  .brutal-btn,
+  .nav-links a {
+    transition: none;
+  }
+
+  .brutal-btn:hover,
+  button:active {
+    transform: none;
+  }
+}
+
 
