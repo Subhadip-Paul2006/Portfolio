@@ -512,7 +512,7 @@ footer {
   border: var(--border-width) solid var(--black);
   box-shadow: 6px 6px 0px var(--secondary);
   margin-top: 20px;
-  width: 220px;
+  width: 320px;
   text-align: center;
 }
 
