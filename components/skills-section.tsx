@@ -30,6 +30,7 @@ import {
   Settings,
   PieChart
 } from "lucide-react"
+import { RotatingHeading } from "./rotating-heading"
 import styles from "./skills-section.module.css"
 
 // Import custom icons
@@ -134,57 +135,10 @@ const SKILL_CATEGORIES: SkillCategory[] = [
 /* ──────────────────────── ROTATING HEADER ──────────────────── */
 
 function RotatingHeading() {
-  const [displayText, setDisplayText] = useState("")
-  const [wordIndex, setWordIndex] = useState(0)
-  const [isDeleting, setIsDeleting] = useState(false)
-
-  useEffect(() => {
-    let cancelled = false
-    let timeout: ReturnType<typeof setTimeout> | undefined
-
-    const tick = () => {
-      if (cancelled) return
-      const currentWord = ROTATING_WORDS[wordIndex]
-
-      if (!isDeleting && displayText === currentWord) {
-        // Hold the finished word for 2s, then start deleting
-        timeout = setTimeout(() => {
-          if (!cancelled) setIsDeleting(true)
-        }, 2000)
-      } else if (isDeleting && displayText === "") {
-        // Move to the next word on the next tick
-        setIsDeleting(false)
-        setWordIndex((prev) => (prev + 1) % ROTATING_WORDS.length)
-      } else if (isDeleting) {
-        timeout = setTimeout(() => {
-          if (!cancelled) setDisplayText(currentWord.slice(0, displayText.length - 1))
-        }, 60)
-      } else {
-        timeout = setTimeout(() => {
-          if (!cancelled) setDisplayText(currentWord.slice(0, displayText.length + 1))
-        }, 120)
-      }
-    }
-
-    tick()
-    return () => {
-      cancelled = true
-      if (timeout) clearTimeout(timeout)
-    }
-  }, [displayText, isDeleting, wordIndex])
-
-  return (
-    <h2 className={styles.heading} id="skills">
-      <span className={styles.headingStatic}>CORE.</span>
-      <span className={styles.headingDynamic} aria-live="polite">
-        {displayText}
-        <span className={styles.cursor} aria-hidden="true">
-          _
-        </span>
-      </span>
-    </h2>
-  )
+  // intentionally empty — see ./rotating-heading.tsx
 }
+
+function _RotatingHeadingImpl_REMOVED() {
 
 /* ──────────────────────── PROGRESS BAR ─────────────────────── */
 

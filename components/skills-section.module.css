@@ -54,12 +54,16 @@
   gap: 36px;
   justify-items: center;
   align-items: start; /* prevents cards stretching to equal height — fixes WEB 4.0 blank space */
-  transition: gap 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* When any card is hovered, increase gap so siblings slide out */
-.grid:has(.card:hover) {
-  gap: 44px;
+/* Hover is a desktop-only flourish: skip the scale (and the layout cost
+   it incurs on mobile) entirely. */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: scale(1.12);
+    box-shadow: 12px 12px 0px #ff3e00;
+    z-index: 10;
+  }
 }
 
 .card:nth-child(1),
@@ -193,24 +197,29 @@
   position: relative;
 }
 
-/* Shimmer sweep animation on filled bar */
-.barFill::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.4) 40%,
-    rgba(255, 255, 255, 0.6) 50%,
-    rgba(255, 255, 255, 0.4) 60%,
-    transparent 100%
-  );
-  animation: shimmer 2s ease-in-out infinite;
-  animation-delay: 1.2s;
+/* Shimmer sweep animation on filled bar — desktop only.
+   24 simultaneous `::after` pseudo animations kept the mobile compositor
+   busy even when bars were off-screen, so we scope to hover-capable
+   devices and run the sweep once instead of forever. */
+@media (hover: hover) and (pointer: fine) {
+  .barFill::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 40%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0.4) 60%,
+      transparent 100%
+    );
+    animation: shimmer 2s ease-in-out 1;
+    animation-delay: 1.2s;
+  }
 }
 
 @keyframes shimmer {
@@ -242,10 +251,6 @@
   .grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 28px;
-  }
-
-  .grid:has(.card:hover) {
-    gap: 34px;
   }
 
   .card:nth-child(1),
@@ -297,9 +302,5 @@
 
   .card {
     padding: 28px 22px;
-  }
-
-  .card:hover {
-    transform: scale(1.05);
   }
 }
