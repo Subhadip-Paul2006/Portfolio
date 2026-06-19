@@ -538,6 +538,35 @@ footer {
   }
 }
 
+@media (max-width: 1024px) {
+  /* Tighten large sections a bit before the burger kicks in */
+  .hero-text,
+  .hero-image,
+  .contact-info,
+  .contact-form {
+    padding: 40px;
+  }
+
+  .hero-text h1 {
+    font-size: 4.5rem;
+    letter-spacing: -1px;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    padding: 50px 20px;
+  }
+
+  .project-card,
+  .service-box {
+    padding: 30px;
+  }
+
+  .project-img {
+    height: 320px;
+  }
+}
+
 @media (max-width: 768px) {
   .nav-burger {
     display: flex;
@@ -562,6 +591,176 @@ footer {
 
   .nav-toggle:checked ~ .nav-links {
     display: flex;
+  }
+
+  /* Hero: stack text above image, drop the side border */
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-text {
+    padding: 40px 24px;
+    border-right: none;
+    border-bottom: var(--border-width) solid var(--black);
+  }
+
+  .hero-text h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-image {
+    padding: 24px;
+  }
+
+  /* Marquee text gets smaller so it doesn't dominate mobile */
+  .marquee-content {
+    font-size: 1.4rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    padding: 40px 16px;
+  }
+
+  /* Projects: one column on tablet/mobile, remove the
+     nth-child right-border strip (no 2nd column) and rebalance. */
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 30px 20px;
+    border-right: none;
+  }
+
+  .project-card:nth-child(2n) {
+    border-right: none;
+  }
+
+  .project-img {
+    height: 260px;
+  }
+
+  /* Services: 2 columns on tablet */
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-box {
+    padding: 30px 20px;
+  }
+
+  .service-box:nth-child(2n) {
+    border-right: none;
+  }
+
+  .service-box:nth-child(1),
+  .service-box:nth-child(2) {
+    border-bottom: var(--border-width) solid var(--black);
+  }
+
+  /* Contact: stack info above form */
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 40px 24px;
+  }
+
+  .contact-info {
+    border-right: none;
+    border-bottom: var(--border-width) solid white;
+  }
+
+  /* My Work button width tracks the narrower viewport */
+  .brutal-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Logo + nav padding shrink for very narrow screens */
+  .logo {
+    font-size: 1.5rem;
+    padding: 4px 10px;
+  }
+
+  nav {
+    padding: 12px 0;
+  }
+
+  .hero-text {
+    padding: 30px 16px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+    padding: 8px;
+  }
+
+  .hero-image {
+    padding: 16px;
+  }
+
+  .blob {
+    width: 120px;
+    height: 120px;
+    top: -10px;
+    right: -10px;
+  }
+
+  .marquee-content {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    padding: 30px 12px;
+  }
+
+  .project-card,
+  .service-box {
+    padding: 24px 16px;
+  }
+
+  .project-img {
+    height: 200px;
+  }
+
+  /* Services: single column on phones */
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  .service-box {
+    border-right: none;
+    border-bottom: var(--border-width) solid var(--black);
+  }
+
+  .service-box:last-child {
+    border-bottom: none;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 30px 16px;
+  }
+
+  button {
+    padding: 16px 24px;
+    font-size: 1.2rem;
+  }
+
+  footer {
+    padding: 24px 16px;
   }
 }
 
