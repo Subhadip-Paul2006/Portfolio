@@ -37,3 +37,4 @@ Thumbs.db
 # Claude / agent tooling
 .claude
 
+run-claude.ps1

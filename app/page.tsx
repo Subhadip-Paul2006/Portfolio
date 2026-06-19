@@ -1,4 +1,9 @@
+import Image from "next/image"
 import SkillsSection from "@/components/skills-section"
+import ContactForm from "@/components/contact-form"
+import LinkedInIcon from "@/components/icons/linkedin.svg"
+import GitHubIcon from "@/components/icons/github-142-svgrepo-com.svg"
+import DiscordIcon from "@/components/icons/discord-svgrepo-com.svg"
 
 export default function Home() {
   return (
@@ -8,9 +13,15 @@ export default function Home() {
           className="container"
           style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}
         >
-          <a href="#" className="logo">
+          <a href="#" className="logo" aria-label="Subh.06 home">
             Subh.06
           </a>
+          {/* CSS-only hamburger: the checkbox drives .nav-links visibility
+              via the sibling selector in app/globals.css. No JS required. */}
+          <input type="checkbox" id="nav-toggle" className="nav-toggle" aria-label="Toggle navigation" />
+          <label htmlFor="nav-toggle" className="nav-burger" aria-label="Open navigation menu">
+            <span />
+          </label>
           <div className="nav-links">
             <a href="#skills">Skills</a>
             <a href="#work">Projects</a>
@@ -32,15 +43,27 @@ export default function Home() {
           </a>
         </div>
         <div className="hero-image">
-          <div className="blob"></div>
-          <img src="/images/me.jpeg" alt="Max Void Portrait" />
+          <div className="blob" aria-hidden="true"></div>
+          {/* TODO: compress /images/me.jpeg (~3.1 MB). Even with next/image optimization,
+              the source asset is the dominant LCP contributor. */}
+          <Image
+            src="/images/me.jpeg"
+            alt="Portrait of Subh.06"
+            width={1200}
+            height={1200}
+            priority
+            sizes="(max-width: 1200px) 50vw, 600px"
+          />
         </div>
       </section>
 
-      <div className="marquee">
+      <div className="marquee" aria-hidden="true">
+        {/* The marquee text is duplicated so the translateX(-50%) loop
+            is seamless. aria-hidden keeps screen readers from reading it
+            twice. */}
         <div className="marquee-content">
-          UI/UX DESIGNER // ALGORITHM THINKER // DATA-DRIVEN DEVELOPMENT // PROBLEM SOLVER // FRONTEND ENGINEERING // DATA SCIENCE ENTHUSIAST // SYSTEM DESIGN BASICS //
-          UI/UX DESIGNER // ALGORITHM THINKER // DATA-DRIVEN DEVELOPMENT // PROBLEM SOLVER // FRONTEND ENGINEERING // DATA SCIENCE ENTHUSIAST // SYSTEM DESIGN BASICS //
+          UI/UX DESIGNER // ALGORITHM THINKER // DATA-DRIVEN DEVELOPMENT // PROBLEM SOLVER // FRONTEND ENGINEERING // DATA SCIENCE ENTHUSIAST // SYSTEM DESIGN BASICS //&nbsp;
+          UI/UX DESIGNER // ALGORITHM THINKER // DATA-DRIVEN DEVELOPMENT // PROBLEM SOLVER // FRONTEND ENGINEERING // DATA SCIENCE ENTHUSIAST // SYSTEM DESIGN BASICS //&nbsp;
         </div>
       </div>
 
@@ -51,8 +74,16 @@ export default function Home() {
       </h2>
 
       <section className="projects">
-        <div className="project-card">
-          <img src="/images/project-1.jpg" alt="Project 1" className="project-img" />
+        <article className="project-card">
+          <Image
+            src="/images/project-1.jpg"
+            alt="Cyber-punk e-commerce website preview"
+            width={800}
+            height={400}
+            loading="lazy"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="project-img"
+          />
           <div className="project-tags">
             <span className="tag">Web Design</span>
             <span className="tag">2023</span>
@@ -61,12 +92,20 @@ export default function Home() {
           <p style={{ margin: "15px 0" }}>
             A brutalist approach to modern fashion retail. Conversion rates up by 40% because of the sheer audacity.
           </p>
-          <a href="#" style={{ color: "inherit", fontWeight: 700 }}>
+          <a href="#" style={{ color: "inherit", fontWeight: 700 }} aria-disabled="true">
             EXPLORE →
           </a>
-        </div>
-        <div className="project-card">
-          <img src="/images/project-2.jpg" alt="Project 2" className="project-img" />
+        </article>
+        <article className="project-card">
+          <Image
+            src="/images/project-2.jpg"
+            alt="Neon Noir music collective brand identity"
+            width={800}
+            height={400}
+            loading="lazy"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="project-img"
+          />
           <div className="project-tags">
             <span className="tag">Branding</span>
             <span className="tag">2024</span>
@@ -75,12 +114,20 @@ export default function Home() {
           <p style={{ margin: "15px 0" }}>
             Visual identity for a underground music collective. Thick lines, high contrast, maximum impact.
           </p>
-          <a href="#" style={{ color: "inherit", fontWeight: 700 }}>
+          <a href="#" style={{ color: "inherit", fontWeight: 700 }} aria-disabled="true">
             EXPLORE →
           </a>
-        </div>
-        <div className="project-card">
-          <img src="/images/project-3.jpg" alt="Project 3" className="project-img" />
+        </article>
+        <article className="project-card">
+          <Image
+            src="/images/project-3.jpg"
+            alt="Chaos Dashboard data visualization tool"
+            width={800}
+            height={400}
+            loading="lazy"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="project-img"
+          />
           <div className="project-tags">
             <span className="tag">App Design</span>
             <span className="tag">2023</span>
@@ -89,12 +136,20 @@ export default function Home() {
           <p style={{ margin: "15px 0" }}>
             A data visualization tool that rejects the minimalism of SaaS. Information density meets raw aesthetic.
           </p>
-          <a href="#" style={{ color: "inherit", fontWeight: 700 }}>
+          <a href="#" style={{ color: "inherit", fontWeight: 700 }} aria-disabled="true">
             EXPLORE →
           </a>
-        </div>
-        <div className="project-card">
-          <img src="/images/project-4.jpg" alt="Project 4" className="project-img" />
+        </article>
+        <article className="project-card">
+          <Image
+            src="/images/project-4.jpg"
+            alt="Glitch Protocol experimental WebGL website"
+            width={800}
+            height={400}
+            loading="lazy"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="project-img"
+          />
           <div className="project-tags">
             <span className="tag">Development</span>
             <span className="tag">2024</span>
@@ -103,10 +158,10 @@ export default function Home() {
           <p style={{ margin: "15px 0" }}>
             Experimental WebGL site for a tech startup. Optimized for performance, designed for disruption.
           </p>
-          <a href="#" style={{ color: "inherit", fontWeight: 700 }}>
+          <a href="#" style={{ color: "inherit", fontWeight: 700 }} aria-disabled="true">
             EXPLORE →
           </a>
-        </div>
+        </article>
       </section>
 
       <section className="services" id="services">
@@ -135,45 +190,56 @@ export default function Home() {
             Got a project that&apos;s too bold for the average agency?
           </p>
           <p>
-            <strong>EMAIL:</strong> hello@jess.vc
+            <strong>EMAIL:</strong>{" "}
+            <a href="mailto:hello@jess.vc" style={{ color: "inherit" }}>
+              futurecareergoal@gmail.com
+            </a>
           </p>
           <p>
-            <strong>LOCATION:</strong> Berlin / Remote
+            <strong>LOCATION:</strong> Durgapur / Remote
           </p>
-          <div style={{ marginTop: "40px", display: "flex", gap: "20px" }}>
-            <a href="#" style={{ color: "var(--accent)", textDecoration: "none", fontWeight: 700 }}>
-              TWITTER
+          <div style={{ marginTop: "40px", display: "flex", gap: "20px", alignItems: "center", flexWrap: "wrap" }}>
+            <a
+              href="https://www.linkedin.com/in/subhadip-paul-471186339/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", border: "var(--border-width) solid var(--black)", boxShadow: "4px 4px 0 var(--black)", background: "var(--bg)", padding: "8px" }}
+            >
+              <Image src={LinkedInIcon} alt="LinkedIn" width={32} height={32} />
             </a>
-            <a href="#" style={{ color: "var(--secondary)", textDecoration: "none", fontWeight: 700 }}>
-              DRIBBBLE
+            <a
+              href="https://github.com/Subhadip-Paul2006/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", border: "var(--border-width) solid var(--black)", boxShadow: "4px 4px 0 var(--black)", background: "var(--bg)", padding: "8px" }}
+            >
+              <Image src={GitHubIcon} alt="GitHub" width={32} height={32} />
             </a>
-            <a href="#" style={{ color: "var(--primary)", textDecoration: "none", fontWeight: 700 }}>
-              INSTAGRAM
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Discord"
+              style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", border: "var(--border-width) solid var(--black)", boxShadow: "4px 4px 0 var(--black)", background: "var(--bg)", padding: "8px" }}
+            >
+              <Image src={DiscordIcon} alt="Discord" width={32} height={32} />
             </a>
           </div>
         </div>
         <div className="contact-form">
-          <form>
-            <div className="input-group">
-              <label>YOUR NAME</label>
-              <input type="text" placeholder="John 'The Maverick' Doe" />
-            </div>
-            <div className="input-group">
-              <label>EMAIL ADDRESS</label>
-              <input type="email" placeholder="john@unconventional.com" />
-            </div>
-            <div className="input-group">
-              <label>THE MISSION</label>
-              <textarea rows={5} placeholder="Tell me why we should break the internet together..."></textarea>
-            </div>
-            <button type="submit">SEND TRANSMISSION</button>
-          </form>
+          <ContactForm />
         </div>
       </section>
 
       <footer>
-        <p>© 2026 JESS.VC NO RIGHTS RESERVED. COPY EVERYTHING.</p>
-        <div style={{ marginTop: "20px", fontSize: "0.8rem" }}>BUILT WITH VIBES, CODE, AND BRUTALIST AESTHETICS.</div>
+        <p suppressHydrationWarning>
+          © {new Date().getFullYear()} JESS.VC NO RIGHTS RESERVED. COPY EVERYTHING.
+        </p>
+        <div style={{ marginTop: "20px", fontSize: "0.8rem" }}>
+          BUILT WITH VIBES, CODE, AND BRUTALIST AESTHETICS.
+        </div>
       </footer>
     </>
   )

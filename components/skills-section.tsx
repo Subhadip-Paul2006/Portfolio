@@ -1,27 +1,28 @@
 "use client"
 
 import { useEffect, useRef, useState, useCallback } from "react"
-import Image from "next/image"
-import { 
-  Code2, 
-  Terminal, 
-  Database, 
-  Layers, 
-  Cpu, 
-  Globe, 
-  Braces, 
-  FileJson, 
-  Layout, 
-  Server, 
-  Wind, 
-  Box, 
-  Zap, 
-  Table2, 
-  History, 
-  Search, 
-  PenTool, 
-  Monitor, 
-  Github, 
+import Image, { type StaticImageData } from "next/image"
+import type { LucideIcon } from "lucide-react"
+import {
+  Code2,
+  Terminal,
+  Database,
+  Layers,
+  Cpu,
+  Globe,
+  Braces,
+  FileJson,
+  Layout,
+  Server,
+  Wind,
+  Box,
+  Zap,
+  Table2,
+  History,
+  Search,
+  PenTool,
+  Monitor,
+  Github,
   Smartphone,
   BarChart,
   LineChart,
@@ -62,7 +63,7 @@ import MongoDBIcon from "./icons/mongodb-svgrepo-com.png"
 interface Skill {
   name: string
   level: number
-  icon: any // Can be Lucide icon component or StaticImageData
+  icon: LucideIcon | StaticImageData
 }
 
 interface SkillCategory {
@@ -136,16 +137,10 @@ function RotatingHeading() {
   const [wordIndex, setWordIndex] = useState(0)
   const [displayText, setDisplayText] = useState("")
   const [isDeleting, setIsDeleting] = useState(false)
-  const [showCursor, setShowCursor] = useState(true)
-
-  useEffect(() => {
-    const id = setInterval(() => setShowCursor((v) => !v), 530)
-    return () => clearInterval(id)
-  }, [])
 
   useEffect(() => {
     const currentWord = ROTATING_WORDS[wordIndex]
-    let timeout: NodeJS.Timeout
+    let timeout: ReturnType<typeof setTimeout> | undefined
 
     if (!isDeleting && displayText === currentWord) {
       timeout = setTimeout(() => setIsDeleting(true), 2000)
@@ -162,7 +157,9 @@ function RotatingHeading() {
       }, 120)
     }
 
-    return () => clearTimeout(timeout)
+    return () => {
+      if (timeout) clearTimeout(timeout)
+    }
   }, [displayText, isDeleting, wordIndex])
 
   return (
@@ -170,7 +167,7 @@ function RotatingHeading() {
       <span className={styles.headingStatic}>CORE.</span>
       <span className={styles.headingDynamic}>
         {displayText}
-        <span className={styles.cursor} style={{ opacity: showCursor ? 1 : 0 }}>
+        <span className={styles.cursor} aria-hidden="true">
           _
         </span>
       </span>
@@ -235,7 +232,7 @@ function SkillCard({
                   )}
                 </span>
                 <span className={styles.skillName}>{skill.name}</span>
-                <span className={styles.skillPercent}>{skill.level} %</span>
+                <span className={styles.skillPercent}>{skill.level}%</span>
               </div>
               <ProgressBar
                 level={skill.level}

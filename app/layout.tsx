@@ -1,12 +1,23 @@
 import type React from "react"
-import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import type { Metadata, Viewport } from "next"
+import { Archivo_Black, Space_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
-import TargetCursor from "@/components/target-cursor"
+import TargetCursor from "@/components/target-cursor-client"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const archivoBlack = Archivo_Black({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-archivo-black",
+})
+
+const spaceMono = Space_Mono({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-space-mono",
+})
 
 export const metadata: Metadata = {
   title: "JESS.VC - Vibe Coder & Creative Developer",
@@ -25,7 +36,6 @@ export const metadata: Metadata = {
   authors: [{ name: "JESS.VC" }],
   creator: "JESS.VC",
   publisher: "JESS.VC",
-  generator: "v0.app",
   metadataBase: new URL("https://jess.vc"),
   openGraph: {
     type: "website",
@@ -71,22 +81,20 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#ffffff",
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className={`font-sans antialiased`}>
+    <html lang="en" className={`${archivoBlack.variable} ${spaceMono.variable}`}>
+      <body className="font-sans antialiased">
         <TargetCursor
           targetSelector="a, button, input, textarea, select, summary, .project-card, .service-box, .skill-card, .hero-image img, .tag, [data-cursor-target]"
           spinDuration={1.35}
