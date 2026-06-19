@@ -117,17 +117,17 @@ export default function TargetCursor({
       const cursorY = getNumericProperty(cursor, "y")
 
       cornersRef.current.forEach((corner, index) => {
+        const targetPositions = targetCornerPositionsRef.current
+        if (!targetPositions) return
+
         const currentX = getNumericProperty(corner, "x")
         const currentY = getNumericProperty(corner, "y")
         const targetX = targetPositions[index].x - cursorX
         const targetY = targetPositions[index].y - cursorY
 
-        gsap.to(corner, {
+        gsap.set(corner, {
           x: currentX + (targetX - currentX) * strength,
           y: currentY + (targetY - currentY) * strength,
-          duration: strength >= 0.99 ? (parallaxOn ? 0.18 : 0) : 0.05,
-          ease: parallaxOn ? "power1.out" : "none",
-          overwrite: "auto",
         })
       })
     }

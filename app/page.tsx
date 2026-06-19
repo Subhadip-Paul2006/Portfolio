@@ -195,26 +195,26 @@ export default function Home() {
 
       <section className="contact" id="contact">
         <div className="contact-info">
-          <h2 style={{ fontSize: "5rem", marginBottom: "20px" }}>LET&apos;S TALK.</h2>
-          <p style={{ fontSize: "1.5rem", marginBottom: "40px" }}>
+          <h2 className="contact-title">LET&apos;S TALK.</h2>
+          <p className="contact-lead">
             Got a project that&apos;s too bold for the average agency?
           </p>
           <p>
             <strong>EMAIL:</strong>{" "}
-            <a href="mailto:hello@jess.vc" style={{ color: "inherit" }}>
+            <a href="mailto:hello@jess.vc" className="contact-link">
               futurecareergoal@gmail.com
             </a>
           </p>
           <p>
             <strong>LOCATION:</strong> Durgapur / Remote
           </p>
-          <div style={{ marginTop: "40px", display: "flex", gap: "20px", alignItems: "center", flexWrap: "wrap" }}>
+          <div className="contact-socials">
             <a
               href="https://www.linkedin.com/in/subhadip-paul-471186339/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", border: "var(--border-width) solid var(--black)", boxShadow: "4px 4px 0 var(--black)", background: "var(--bg)", padding: "8px" }}
+              className="social-icon"
             >
               <Image src={LinkedInIcon} alt="LinkedIn" width={32} height={32} />
             </a>
@@ -223,7 +223,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", border: "var(--border-width) solid var(--black)", boxShadow: "4px 4px 0 var(--black)", background: "var(--bg)", padding: "8px" }}
+              className="social-icon"
             >
               <Image src={GitHubIcon} alt="GitHub" width={32} height={32} />
             </a>
@@ -232,7 +232,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Discord"
-              style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", border: "var(--border-width) solid var(--black)", boxShadow: "4px 4px 0 var(--black)", background: "var(--bg)", padding: "8px" }}
+              className="social-icon"
             >
               <Image src={DiscordIcon} alt="Discord" width={32} height={32} />
             </a>

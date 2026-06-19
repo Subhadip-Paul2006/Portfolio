@@ -445,6 +445,38 @@ nav {
   border-right: var(--border-width) solid white;
 }
 
+.contact-title {
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
+
+.contact-lead {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+.contact-link {
+  color: inherit;
+}
+
+.contact-socials {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-width) solid var(--black);
+  box-shadow: 4px 4px 0 var(--black);
+  background: var(--bg);
+  padding: 8px;
+}
+
 .contact-form {
   padding: 80px;
 }
@@ -670,9 +702,27 @@ footer {
     padding: 40px 24px;
   }
 
+  .contact-title {
+    font-size: 3.5rem;
+  }
+
+  .contact-lead {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+
   .contact-info {
     border-right: none;
     border-bottom: var(--border-width) solid white;
+  }
+
+  .contact-socials {
+    margin-top: 30px;
+    gap: 16px;
+  }
+
+  .social-icon {
+    padding: 6px;
   }
 
   /* My Work button width tracks the narrower viewport */
@@ -752,6 +802,24 @@ footer {
   .contact-info,
   .contact-form {
     padding: 30px 16px;
+  }
+
+  .contact-title {
+    font-size: 2.5rem;
+  }
+
+  .contact-lead {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  .contact-socials {
+    margin-top: 24px;
+    gap: 12px;
+  }
+
+  .social-icon {
+    padding: 6px;
   }
 
   button {
