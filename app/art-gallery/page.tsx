@@ -28,14 +28,16 @@ export default function ArtGalleryPage() {
 
         <h1 className="art-gallery__title" aria-label={fullText}>
           {fullText.split("").map((ch, i) => (
-            <span
-              key={i}
-              className={`art-gallery__char ${
-                i < revealed ? "is-in" : "is-out"
-              } ${ch === " " ? "is-space" : ""}`}
-              style={{ animationDelay: `${i * 40}ms` }}
-            >
-              {ch === " " ? " " : ch}
+            <span key={i} className="art-gallery__char-wrap">
+              <span
+                className={`art-gallery__char ${
+                  i < revealed ? "is-in" : "is-out"
+                } ${ch === " " ? "is-space" : ""}`}
+                style={{ animationDelay: `${i * 40}ms` }}
+              >
+                {ch === " " ? " " : ch}
+              </span>
+              {i === 5 ? <br /> : null}
             </span>
           ))}
           <span className="art-gallery__cursor" aria-hidden="true" />
