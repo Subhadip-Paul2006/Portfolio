@@ -173,8 +173,8 @@ export default function Home() {
           </article>
           <article className="project-card">
             <Image
-              src="/images/project-4.jpg"
-              alt="Glitch Protocol experimental WebGL website"
+              src="/public/images/PyGame_Application.png"
+              alt="PyGame_Application"
               width={800}
               height={400}
               loading="lazy"
@@ -182,8 +182,8 @@ export default function Home() {
               className="project-img"
             />
             <div className="project-tags">
-              <span className="tag">Development</span>
-              <span className="tag">2024</span>
+              <span className="tag">Under Development</span>
+              <span className="tag">Flutter | Android</span>
             </div>
             <h3>PyGames - Android</h3>
             <p style={{ margin: "15px 0" }}>
