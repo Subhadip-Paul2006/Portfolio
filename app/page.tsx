@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import SkillsSection from "@/components/skills-section"
 import ContactForm from "@/components/contact-form"
 // Static SVG icons are imported as paths so Next can fingerprint them as
@@ -31,7 +32,7 @@ export default function Home() {
           <div className="nav-links">
             <a href="#skills">Skills</a>
             <a href="#work">Projects</a>
-            <a href="#services">Services</a>
+            <Link href="/art-gallery">Art Gallery</Link>
             <a href="#contact">Hire Me</a>
           </div>
         </div>
