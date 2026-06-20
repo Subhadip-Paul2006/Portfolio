@@ -67,18 +67,15 @@ export default function Home() {
                 master. next/image picks the right one from `src`; the
                 <picture> wrapper adds AVIF/WebP via the optimizer while
                 still letting the browser choose between two resolutions
-                by media query.
-                The original file was ~3.2 MB on the wire (base64-encoded
-                JPEG); the rewritten /images/me.jpeg is 743 KB and the
-                mobile-only /images/me-720.jpg is 35 KB. */}
+                by media query. */}
             <picture>
               <source
                 media="(max-width: 768px)"
-                srcSet="/_next/image?url=%2Fimages%2Fme-720.jpg&w=750&q=75&f=avif 1x, /_next/image?url=%2Fimages%2Fme-720.jpg&w=1080&q=75&f=avif 2x"
+                srcSet="/_next/image?url=%2Fimages%2Fme-720.png&w=750&q=75&f=avif 1x, /_next/image?url=%2Fimages%2Fme-720.png&w=1080&q=75&f=avif 2x"
                 type="image/avif"
               />
               <Image
-                src="/images/me.jpeg"
+                src="/images/me.png"
                 alt=""
                 width={1200}
                 height={1200}
