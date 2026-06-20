@@ -107,7 +107,7 @@ export default function Home() {
         <section className="projects">
           <article className="project-card">
             <Image
-              src="/public/images/R3FLEX.png"
+              src="/images/R3FLEX.png"
               alt="R3FLEX preview"
               width={800}
               height={400}
@@ -173,7 +173,7 @@ export default function Home() {
           </article>
           <article className="project-card">
             <Image
-              src="/public/images/PyGame_Application.png"
+              src="/images/PyGame_Application.png"
               alt="PyGame_Application"
               width={800}
               height={400}
