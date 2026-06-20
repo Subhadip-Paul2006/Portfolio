@@ -108,7 +108,7 @@ export default function Home() {
           <article className="project-card">
             <Image
               src="/public/images/R3FLEX.png"
-              alt="Cyber-punk e-commerce website preview"
+              alt="R3FLEX preview"
               width={800}
               height={400}
               loading="lazy"
@@ -185,9 +185,9 @@ export default function Home() {
               <span className="tag">Development</span>
               <span className="tag">2024</span>
             </div>
-            <h3>GLITCH PROTOCOL</h3>
+            <h3>PyGames - Android</h3>
             <p style={{ margin: "15px 0" }}>
-              Experimental WebGL site for a tech startup. Optimized for performance, designed for disruption.
+              Multi-game platform combining Python games into a unified application with a seamless user experience.
             </p>
             <button type="button" className="project-link" disabled aria-disabled="true">
               EXPLORE →
