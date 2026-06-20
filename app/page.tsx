@@ -107,7 +107,7 @@ export default function Home() {
         <section className="projects">
           <article className="project-card">
             <Image
-              src="/images/project-1.jpg"
+              src="/public/images/R3FLEX.png"
               alt="Cyber-punk e-commerce website preview"
               width={800}
               height={400}
