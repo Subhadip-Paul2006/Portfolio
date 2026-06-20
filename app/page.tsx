@@ -116,12 +116,12 @@ export default function Home() {
               className="project-img"
             />
             <div className="project-tags">
-              <span className="tag">Web Design</span>
-              <span className="tag">2023</span>
+              <span className="tag">Supply Chain</span>
+              <span className="tag">Hackathon</span>
             </div>
-            <h3>CYBER-PUNK E-COMMERCE</h3>
+            <h3>R3FLEX</h3>
             <p style={{ margin: "15px 0" }}>
-              A brutalist approach to modern fashion retail. Conversion rates up by 40% because of the sheer audacity.
+              AI-powered supply chain platform for real-time tracking, optimization, and logistics management.
             </p>
             <button type="button" className="project-link" disabled aria-disabled="true">
               EXPLORE →
