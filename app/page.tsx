@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import ProjectsSection from "@/components/projects/projects-section"
 import SkillsSection from "@/components/skills-section"
 import ContactForm from "@/components/contact-form"
 // Static SVG icons are imported as paths so Next can fingerprint them as
@@ -8,7 +9,7 @@ import LinkedInIcon from "@/components/icons/linkedin.svg"
 import GitHubIcon from "@/components/icons/github-142-svgrepo-com.svg"
 import DiscordIcon from "@/components/icons/discord-svgrepo-com.svg"
 
-// Computed once at build time — avoids per-render Date allocation and
+// Computed once at build time - avoids per-render Date allocation and
 // removes the need for suppressHydrationWarning on the footer.
 const YEAR = new Date().getFullYear()
 
@@ -98,100 +99,7 @@ export default function Home() {
 
         <SkillsSection />
 
-        <h2 className="section-title" id="work">
-          Selected Damage
-        </h2>
-
-        <section className="projects">
-          <article className="project-card">
-            <Image
-              src="/images/R3FLEX.png"
-              alt="R3FLEX preview"
-              width={800}
-              height={400}
-              loading="lazy"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="project-img"
-            />
-            <div className="project-tags">
-              <span className="tag">Supply Chain</span>
-              <span className="tag">Hackathon</span>
-            </div>
-            <h3>R3FLEX</h3>
-            <p style={{ margin: "15px 0" }}>
-              AI-powered supply chain platform for real-time tracking, optimization, and logistics management.
-            </p>
-            <button type="button" className="project-link" disabled aria-disabled="true">
-              EXPLORE →
-            </button>
-          </article>
-          <article className="project-card">
-            <Image
-              src="/images/project-2.jpg"
-              alt="Neon Noir music collective brand identity"
-              width={800}
-              height={400}
-              loading="lazy"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="project-img"
-            />
-            <div className="project-tags">
-              <span className="tag">Branding</span>
-              <span className="tag">2024</span>
-            </div>
-            <h3>NEON NOIR IDENTITY</h3>
-            <p style={{ margin: "15px 0" }}>
-              Visual identity for a underground music collective. Thick lines, high contrast, maximum impact.
-            </p>
-            <button type="button" className="project-link" disabled aria-disabled="true">
-              EXPLORE →
-            </button>
-          </article>
-          <article className="project-card">
-            <Image
-              src="/images/project-3.jpg"
-              alt="Chaos Dashboard data visualization tool"
-              width={800}
-              height={400}
-              loading="lazy"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="project-img"
-            />
-            <div className="project-tags">
-              <span className="tag">App Design</span>
-              <span className="tag">2023</span>
-            </div>
-            <h3>CHAOS DASHBOARD</h3>
-            <p style={{ margin: "15px 0" }}>
-              A data visualization tool that rejects the minimalism of SaaS. Information density meets raw aesthetic.
-            </p>
-            <button type="button" className="project-link" disabled aria-disabled="true">
-              EXPLORE →
-            </button>
-          </article>
-          <article className="project-card">
-            <Image
-              src="/images/PyGame_Application.png"
-              alt="PyGame_Application"
-              width={800}
-              height={400}
-              loading="lazy"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="project-img"
-            />
-            <div className="project-tags">
-              <span className="tag">Under Development</span>
-              <span className="tag">Flutter | Android</span>
-            </div>
-            <h3>PyGames - Android</h3>
-            <p style={{ margin: "15px 0" }}>
-              Multi-game platform combining Python games into a unified application with a seamless user experience.
-            </p>
-            <button type="button" className="project-link" disabled aria-disabled="true">
-              EXPLORE →
-            </button>
-          </article>
-        </section>
+        <ProjectsSection />
 
         <section className="services" id="services">
           <div className="service-box">
@@ -265,7 +173,7 @@ export default function Home() {
 
       <footer>
         <p>
-          © {YEAR} JESS.VC NO RIGHTS RESERVED. COPY EVERYTHING.
+          {"\u00A9"} {YEAR} JESS.VC NO RIGHTS RESERVED. COPY EVERYTHING.
         </p>
         <div className="footer-tag">
           BUILT WITH VIBES, CODE, AND BRUTALIST AESTHETICS.

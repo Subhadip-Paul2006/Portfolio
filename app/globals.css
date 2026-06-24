@@ -571,8 +571,7 @@ footer {
   font-size: 0.8rem;
 }
 
-/* Disabled "EXPLORE →" pseudo-link styled as a button (no background
-   or shadow) so it inherits the project-card typography on hover. */
+/* Project CTA keeps the card typography while opening the details dialog. */
 .project-link {
   background: transparent;
   border: none;
@@ -583,7 +582,7 @@ footer {
   text-transform: uppercase;
   color: inherit;
   box-shadow: none;
-  cursor: not-allowed;
+  cursor: pointer;
   letter-spacing: 0.5px;
 }
 
@@ -933,5 +932,3 @@ footer {
     transform: none;
   }
 }
-
-
