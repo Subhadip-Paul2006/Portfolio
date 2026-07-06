@@ -103,20 +103,20 @@ export default function Home() {
 
         <section className="services" id="services">
           <div className="service-box">
-            <h3>VIBE CODE</h3>
-            <p>React, Next.js, TypeScript. Code that performs and looks incredible.</p>
+            <h3>AI ENGINEER</h3>
+            <p>LLMs, RAG systems, AI assistants, prompt engineering, and intelligent applications powered by modern AI.</p>
           </div>
           <div className="service-box">
-            <h3>UI CRAFT</h3>
-            <p>Brutalist interfaces that prioritize character and usability.</p>
+            <h3>UI & DBMS</h3>
+            <p>Next.js, Framer Motion & Figma for UI/UX and Postgres & Mongo storage.</p>
           </div>
           <div className="service-box">
-            <h3>ANIMATIONS</h3>
-            <p>Smooth interactions and motion that enhance the experience.</p>
+            <h3>AUTOMATIONS</h3>
+            <p>AI agents, workflow automation, API integrations, and CI/CD that eliminate repetitive work.</p>
           </div>
           <div className="service-box">
-            <h3>ARCHITECTURE</h3>
-            <p>Clean, scalable code that developers actually enjoy working with.</p>
+            <h3>DEVOPS</h3>
+            <p>Docker, Linux, cloud deployments, GitHub Actions, monitoring, and scalable infrastructure.</p>
           </div>
         </section>
 
