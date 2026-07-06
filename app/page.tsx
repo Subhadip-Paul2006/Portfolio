@@ -20,7 +20,7 @@ export default function Home() {
       <nav>
         <div className="container nav-inner">
           <a href="#" className="logo">
-            Subh.06
+            Shubh.06
           </a>
           {/* CSS-only hamburger: the checkbox drives .nav-links visibility
               via the sibling selector in app/globals.css. No JS required. */}
