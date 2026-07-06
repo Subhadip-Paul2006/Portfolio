@@ -34,7 +34,3 @@ Thumbs.db
 .vscode/
 *.swp
 
-# Claude / agent tooling
-.claude
-
-run-claude.ps1

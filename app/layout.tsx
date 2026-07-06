@@ -24,7 +24,7 @@ const spaceMono = Space_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "JESS.VC - Vibe Coder & Creative Developer",
+  title: "Shubh.06",
   description:
     "Crafting aesthetic code and brutalist digital experiences. Where technical excellence meets raw creative energy. Building apps that look as good as they perform.",
   keywords: [
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://jess.vc",
-    title: "JESS.VC - Vibe Coder & Creative Developer",
+    title: "Shubh.06",
     description:
       "Crafting aesthetic code and brutalist digital experiences. Where technical excellence meets raw creative energy.",
     siteName: "JESS.VC",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JESS.VC - Vibe Coder & Creative Developer",
+    title: "Shubh.06",
     description:
       "Crafting aesthetic code and brutalist digital experiences. Where technical excellence meets raw creative energy.",
     creator: "@jessvc",

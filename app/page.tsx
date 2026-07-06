@@ -173,7 +173,7 @@ export default function Home() {
 
       <footer>
         <p>
-          {"\u00A9"} {YEAR} JESS.VC NO RIGHTS RESERVED. COPY EVERYTHING.
+          {"\u00A9"} {YEAR} Shubh.06 NO RIGHTS RESERVED. COPY EVERYTHING.
         </p>
         <div className="footer-tag">
           BUILT WITH VIBES, CODE, AND BRUTALIST AESTHETICS.
