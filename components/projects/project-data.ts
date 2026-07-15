@@ -55,21 +55,21 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    title: "CHAOS DASHBOARD",
-    category: "App Design",
-    yearOrStack: "2023",
+    title: "DHRISTI",
+    category: "Cyber Security",
+    yearOrStack: "2026",
     summary:
-      "A dense data visualization tool where information density meets a deliberately raw aesthetic.",
+      "Same scan. Reprioritized by reachability. Drishti tells you where to actually look.",
     description:
-      "CHAOS DASHBOARD is an experimental data visualization interface that treats information density as a feature rather than a problem. It organizes complex metrics, live signals, and comparative views through a bold visual hierarchy. The project balances a deliberately raw aesthetic with practical scanning patterns, helping users move from an overwhelming data field to useful insights without losing context.",
+      "A vulnerability scanner produces thousands of findings, each with a severity score and no context. You can't fix thousands of things at once, and a 'critical' bug on an unreachable server matters less than a 'medium' bug one hop from the internet and wired to your customer database.",
     imageAlt: "Chaos dashboard banner",
     tone: "amber",
-    tags: ["App Design", "2023"],
-    techStack: ["React", "D3.js", "Tailwind", "TypeScript", "Charts"],
+    tags: ["CyberSecurity", "Hackathon"],
+    techStack: ["Nmap", "FastAPI", "Google virus Scanner", "TypeScript", "NetworkX"],
     links: {
-      github: "https://github.com/Subhadip-Paul2006",
-      linkedin: "https://www.linkedin.com/in/subhadip-paul-471186339/",
-      demo: "#",
+      github: "https://github.com/soumyachk101/Drishti---Citadel",
+      linkedin: "https://www.linkedin.com/posts/subhadip-paul-471186339_hackathon-cybersecurity-development-ugcPost-7482467252332851202-tHiJ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFTrzxUBwrfRTniXJOW9Q-1AKyxH3syt-Ig",
+      demo: "https://web-one-virid-58.vercel.app/",
     },
   },
   {
