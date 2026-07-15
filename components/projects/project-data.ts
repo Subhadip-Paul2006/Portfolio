@@ -44,7 +44,7 @@ export const PROJECTS: Project[] = [
       "Visual identity for an underground music collective. Thick lines, high contrast, maximum impact.",
     description:
       "NEON NOIR is a visual identity system created for an underground music collective with a loud, cinematic presence. The direction combines heavy typography, saturated color, stark contrast, and flexible graphic elements for digital releases, posters, and social campaigns. Every asset is designed to remain recognizable across formats while preserving the raw energy and mystery of the collective.",
-    iimageSrc: "/images/neeti-ai.png",
+    imageSrc: "/images/neeti-ai.png",
     imageAlt: "neeti ai project preview",
     tone: "violet",
     tags: ["Interview Agent", "2026"],
@@ -63,7 +63,7 @@ export const PROJECTS: Project[] = [
       "Same scan. Reprioritized by reachability. Drishti tells you where to actually look.",
     description:
       "A vulnerability scanner produces thousands of findings, each with a severity score and no context. You can't fix thousands of things at once, and a 'critical' bug on an unreachable server matters less than a 'medium' bug one hop from the internet and wired to your customer database.",
-    imageSrc: "/public/images/Dhristi.png",
+    imageSrc: "/images/Dhristi.png",
     imageAlt: "Dhristi project preview",
     tone: "amber",
     tags: ["CyberSecurity", "Hackathon"],
