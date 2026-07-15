@@ -63,7 +63,7 @@ export const PROJECTS: Project[] = [
     description:
       "A vulnerability scanner produces thousands of findings, each with a severity score and no context. You can't fix thousands of things at once, and a 'critical' bug on an unreachable server matters less than a 'medium' bug one hop from the internet and wired to your customer database.",
     imageSrc: "/images/Dhristi.png",
-    imageAlt: "Dhristi project preview"
+    imageAlt: "Dhristi project preview",
     tone: "amber",
     tags: ["CyberSecurity", "Hackathon"],
     techStack: ["Nmap", "FastAPI", "Google virus Scanner", "TypeScript", "NetworkX"],
