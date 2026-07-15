@@ -44,9 +44,10 @@ export const PROJECTS: Project[] = [
       "Visual identity for an underground music collective. Thick lines, high contrast, maximum impact.",
     description:
       "NEON NOIR is a visual identity system created for an underground music collective with a loud, cinematic presence. The direction combines heavy typography, saturated color, stark contrast, and flexible graphic elements for digital releases, posters, and social campaigns. Every asset is designed to remain recognizable across formats while preserving the raw energy and mystery of the collective.",
-    imageAlt: "Neon Noir identity banner",
+    iimageSrc: "/images/neeti-ai.png",
+    imageAlt: "neeti ai project preview",
     tone: "violet",
-    tags: ["Branding", "2024"],
+    tags: ["Interview Agent", "2026"],
     techStack: ["Next.js", "TypeScript", "Python", "Supabase", "Fast API"],
     links: {
       github: "https://github.com/Subhadip-Paul2006",
