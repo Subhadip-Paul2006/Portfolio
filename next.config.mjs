@@ -8,6 +8,14 @@ const nextConfig = {
   reactStrictMode: true,
   compress: true,
   poweredByHeader: false,
+  async rewrites() {
+    return [
+      {
+        source: '/images/Me.png',
+        destination: '/images/me.png',
+      },
+    ]
+  },
   // Static caching for /public assets so the browser doesn't re-request them
   // on every navigation. The aggressive max-age is safe because we ship
   // fingerprinted assets through next/image for everything else.

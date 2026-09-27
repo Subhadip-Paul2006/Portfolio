@@ -72,12 +72,11 @@ export default function Home() {
             <picture>
               <source
                 media="(max-width: 768px)"
-                srcSet="/_next/image?url=%2Fimages%2Fme-720.png&w=750&q=75&f=avif 1x, /_next/image?url=%2Fimages%2Fme-720.png&w=1080&q=75&f=avif 2x"
-                type="image/avif"
+                srcSet="/_next/image?url=%2Fimages%2Fme-720.png&w=750&q=75 1x, /_next/image?url=%2Fimages%2Fme-720.png&w=1080&q=75 2x"
               />
               <Image
                 src="/images/me.png"
-                alt=""
+                alt="Subhadip Paul portrait"
                 width={1200}
                 height={1200}
                 priority
