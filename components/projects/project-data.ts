@@ -71,7 +71,7 @@ export const PROJECTS: Project[] = [
     links: {
       github: "https://github.com/soumyachk101/Drishti---Citadel",
       linkedin: "https://www.linkedin.com/posts/subhadip-paul-471186339_hackathon-cybersecurity-development-ugcPost-7482467252332851202-tHiJ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFTrzxUBwrfRTniXJOW9Q-1AKyxH3syt-Ig",
-      demo: "https://web-one-virid-58.vercel.app/",
+      demo: "https://net-sentinal-ai.vercel.app/app",
     },
   },
   {
