@@ -147,6 +147,7 @@ export default function ContactForm() {
           aria-required="true"
           aria-invalid={Boolean(errors.name)}
           aria-describedby={errors.name ? "name-error" : undefined}
+          style={{ color: "var(--black)", caretColor: "var(--black)" }}
           required
         />
         {errors.name && (
@@ -182,6 +183,7 @@ export default function ContactForm() {
           aria-required="true"
           aria-invalid={Boolean(errors.email)}
           aria-describedby={errors.email ? "email-error" : undefined}
+          style={{ color: "var(--black)", caretColor: "var(--black)" }}
           required
         />
         {errors.email && (
@@ -216,6 +218,7 @@ export default function ContactForm() {
           aria-required="true"
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? "message-error" : undefined}
+          style={{ color: "var(--black)", caretColor: "var(--black)" }}
           required
         />
         {errors.message && (

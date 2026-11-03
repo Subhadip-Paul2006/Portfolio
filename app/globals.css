@@ -156,7 +156,7 @@ body {
   line-height: 1.4;
   overflow-x: hidden;
   /* Inset box-shadow gives the same brutalist 4px frame as `border` but is
-     a compositor-only operation — avoids the full-repaint triggered when
+     a compositor-only operation â€” avoids the full-repaint triggered when
      `body { border }` is invalidated by viewport changes (mobile address
      bar collapse/expand). */
   box-shadow: inset 0 0 0 var(--border-width) var(--black);
@@ -506,21 +506,37 @@ label {
   margin-bottom: 10px;
 }
 
+.contact-form input,
+.contact-form textarea,
 input,
 textarea {
   width: 100%;
   padding: 15px;
   background: white;
+  color: var(--black);
+  caret-color: var(--black);
   border: var(--border-width) solid var(--primary);
   font-family: "Space Mono", monospace;
   font-size: 1rem;
   box-shadow: 6px 6px 0px var(--primary);
 }
 
+.contact-form input::placeholder,
+.contact-form textarea::placeholder,
+input::placeholder,
+textarea::placeholder {
+  color: #666666;
+  opacity: 1;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
 input:focus,
 textarea:focus {
   outline: none;
   background: var(--accent);
+  color: var(--black);
+  caret-color: var(--black);
 }
 
 button {
@@ -541,7 +557,7 @@ button:active {
   box-shadow: 4px 4px 0px var(--primary);
 }
 
-/* Visually hidden until focused — keyboard users get a skip-to-content
+/* Visually hidden until focused â€” keyboard users get a skip-to-content
    link without cluttering the visual layout. */
 .skip-link {
   position: absolute;
