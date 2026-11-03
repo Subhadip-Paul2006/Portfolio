@@ -18,6 +18,7 @@ yarn-error.log*
 
 # env files / local secrets (NEVER commit credentials)
 .env*
+!.env.example
 .settings.local.json
 
 # vercel
